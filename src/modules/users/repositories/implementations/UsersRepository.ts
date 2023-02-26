@@ -24,12 +24,11 @@ class UsersRepository implements IUsersRepository {
     Object.assign(user, {
       name,
       email,
-      created_at: new Date()
+      created_at: new Date(),
+      updated_at: new Date()
     });
 
     this.users.push(user)
-
-    console.log(user)
 
     return user
   }
@@ -56,20 +55,6 @@ class UsersRepository implements IUsersRepository {
   }
 
   list(): User[] {
-    // const adminUser = this.users.find(user => user.admin === true)
-    
-    // console.log('adminUser - ', adminUser)
-
-    // if (adminUser) {
-    //   return 
-      
-      
-      
-    // }
-    
-    // const users = this.users.filter(user => user.id)
-    // return users
-
     return this.users
   }
 }
